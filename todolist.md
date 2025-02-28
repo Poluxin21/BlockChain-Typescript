@@ -89,3 +89,15 @@ Os blocos não são criados a cada transação, mas sim quando certos critérios
 - **Camada de Privacidade**: Implementação de ZK-SNARKs ou MimbleWimble
 - **Governança**: Modelos de decisão para alterações na blockchain
 
+
+Redis → Cache e Mempool (armazenamento temporário)
+Mantém transações pendentes antes de serem mineradas em um bloco.
+Permite validação rápida antes de inserir na blockchain.
+Usa expiração TTL para evitar acumulação infinita de transações inválidas.
+2️⃣ RocksDB/LevelDB → Blockchain (armazenamento permanente)
+Guarda blocos confirmados e transações aprovadas.
+Estrutura de dados chave-valor otimizada para leitura rápida.
+Indexação eficiente para busca de blocos e transações.
+3️⃣ (Opcional) PostgreSQL/MySQL → Dados estruturados e análises
+Para armazenar dados indexados como usuários, carteiras e estatísticas.
+Facilita queries complexas e dashboards administrativos.

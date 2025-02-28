@@ -1,14 +1,14 @@
-import Block from "../../Domain/Blocos/Block"
+import Bloco from "../../Domain/Blocos/Bloco"
 import { IBlockService } from "./IBlockService"
 import sha256 from 'sha256'
 
 export class BlockService implements IBlockService
 {
-    criarBloco(dados: any, hashAnt: string, indice: number): Block {
-        return new Block(indice, new Date(), hashAnt, dados);
+    criarBloco(dados: any, hashAnt: string, indice: number): Bloco {
+        return new Bloco(indice, new Date(), hashAnt, dados);
     }
 
-    minerarBloco(bloco: Block, dificuldade: number): Block {
+    minerarBloco(bloco: Bloco, dificuldade: number): Bloco {
         let hash = "";
         const prefixoBase = sha256(bloco.HashAnt).substring(0, dificuldade);
         const prefixo = prefixoBase.replace(/./g, (char, index) => (index % 2 === 0 ? "0" : char));
@@ -22,7 +22,7 @@ export class BlockService implements IBlockService
         return bloco;
     }
 
-    proximoBloco(bloco: Block): number {
+    proximoBloco(bloco: Bloco): number {
         return bloco.Indice + 1;
     }
 }

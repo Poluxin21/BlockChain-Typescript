@@ -1,7 +1,7 @@
-import Block from "../../Domain/Blocos/Block";
+import Bloco from "../../Domain/Blocos/Bloco";
 
 export interface IBlockService {
-    criarBloco(dados: any, hashAnt: string, indice: number): Block;
-    minerarBloco(bloco: Block, dificuldade: number): Block;
-    proximoBloco(bloco: Block): number;
+    criarBloco(dados: any, hashAnt: string, indice: number): Bloco;
+    minerarBloco(bloco: Bloco, dificuldade: number): Bloco;
+    proximoBloco(bloco: Bloco): number;
 }

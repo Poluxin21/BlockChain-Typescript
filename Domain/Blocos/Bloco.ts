@@ -1,6 +1,6 @@
 import sha256 from 'sha256'
 
-export default class Block
+export default class Bloco
 {
     public Indice: number;
     public Timestamp: Date;

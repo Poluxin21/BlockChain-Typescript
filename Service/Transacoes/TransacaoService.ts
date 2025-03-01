@@ -1,6 +1,6 @@
 import Transacao from "../../Domain/Transacoes/Transacao.js";
 import { ITransacao } from "./ITransacaoService.js";
-import CarteiraRepository from "../../Infra/Repositories/CarteiraRepository.js";
+import CarteiraRepository from "../../Infra/Repositories/Carteira/CarteiraRepository.js";
 
 export default class TransacaoService implements ITransacao {
     private carteiraRepo: CarteiraRepository;
@@ -23,7 +23,6 @@ export default class TransacaoService implements ITransacao {
 
         const RemPKey = carteira.PrivKey;
 
-        // Criar e retornar a transação assinada
         const transacao = new Transacao(Rem, RemPKey, Dest, Amount, Timestamp);
         return transacao;
     }

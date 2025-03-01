@@ -1,5 +1,5 @@
-import { InitDataBase } from "../Context/AppDbContext.js";
-import Carteira from "../../Domain/Carteiras/Carteira.js";
+import { InitDataBase } from "../../Context/AppDbContext.js";
+import Carteira from "../../../Domain/Carteiras/Carteira.js";
 
 export default class CarteiraRepository {
     private db: any;

@@ -1,0 +1,5 @@
+CREATE TABLE Carteiras ( 
+    ID INT PRIMARY KEY NOT NULL,
+    PubliKey TEXT NOT NULL UNIQUE, 
+    PrivKey TEXT NOT NULL UNIQUE
+);
